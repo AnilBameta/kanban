@@ -1,6 +1,6 @@
 const LoadingComponent = () => {
     return (
-      <div>...LoadingComponent</div>
+      <div style={{margin: "auto", textAlign: "center"}}>...LoadingComponent</div>
     )
   }
   

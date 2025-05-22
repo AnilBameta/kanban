@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { lazy } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ErrorBoundary } from 'react-error-boundary';
 import fallbackRender from './components/ErrorBoundaryMessage';
 import LoadingComponent from './components/LoadingComponent';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+const App = lazy(() => import('./App'));
 root.render(
   <ErrorBoundary FallbackComponent={fallbackRender} onReset={() => window.location.reload()} onError={(error, info) => console.log("Error happened:", error, info)}>
     <React.Suspense fallback={<LoadingComponent />}>
